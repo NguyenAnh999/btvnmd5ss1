@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //bai1
+        let arr = [1,2,3,4,5];
+        let sum =0;
+     arr.forEach((item)=>{
+            sum+=item
+        })
+        console.log(sum)
+        //bai2
+        sum= arr.reduce((total,item)=>total+item,0)
+     console.log(sum);
+     //bai3
+     let strS = ["","dfd","dfdfd","dfdfdfdf"]
+     let arrStr = strS.map((item)=>item.length)
+     console.log(arrStr);
+     //bai4
+     let fistNum = arr.find((item)=>item%2===0)
+     console.log(fistNum);
+     //bai5
+     let arrFinlter = arr.filter((item)=>item%2===0)
+     console.log(arrFinlter);
+     //bai6
+     let bigNumber = arr.reduce((loopValue,currentValue)=>{return (currentValue>loopValue)?currentValue:loopValue;})
+     console.log(bigNumber);
+     //bai7
+     console.log(arr.indexOf(1));
+     console.log(arr.includes(1));
+     //bai8
+     console.log(arr.filter((item)=>{
+if(item>=2){
+    for (let i = 2; i <= Math.sqrt(item); i++) {
+        if (item%i===0) {
+            return false;
+        }
+    }
+    return true;
+}
+     }).reduce((
+        total,item)=>total+item,0
+    ));
+
+//bai9
+let employees = [
+        {
+          name: 'Alice',
+          salary: 1000,
+        },
+        {
+          name: 'Giang',
+          salary: 100,
+        },
+        {
+          name: 'Đạo',
+          salary: 90,
+        },
+        {
+          name: 'Liêm',
+          salary: 110,
+        }
+      ];
+console.log(employees.map((item)=>item.salary).reduce((total,item)=>total+item,0));
+//bai10
+console.log(arr.map((item)=>Math.pow(item,2)));
+    </script>
+</body>
+</html>
